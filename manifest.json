@@ -6,14 +6,14 @@
   "version": "0.1",
 
   "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_icon": "static/icon.png",
+    "default_popup": "static/popup.html"
   },
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
+      "matches": ["https://f4l-live.azurewebsites.net/"],
     //   "css": ["mystyles.css"],
-      "js": ["jquery-3.1.0.min.js", "myscript.js"]
+      "js": ["static/jquery-3.1.0.min.js", "built/myscript.js"]
     }
   ],  
   "permissions": [
