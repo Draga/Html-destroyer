@@ -5,7 +5,7 @@
         "target": "ES5",
         "outDir": "built",
         "rootDir": "src",
-        "sourceMap": true,
+        // "sourceMap": true,
         "outFile": "dist/html-destroyer.js"
     }
 }

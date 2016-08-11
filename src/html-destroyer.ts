@@ -14,16 +14,6 @@ import { WordGenerator } from "./word-generator";
  */
 export class HtmlDestroyer {
     wordGenerator: WordGenerator;
-    
-    constructor()
-    {
-        $(document).ready(function(){
-            $("h2").each(function() {
-                var h1Element = $(this); 
-                this.destroyH(h1Element);
-            });
-        });
-    }
         
     destroyH (hElement:JQuery)
     {
