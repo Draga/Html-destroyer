@@ -1,0 +1,16 @@
+{
+    "name": "HtmlDestroyer",
+    "description": "A tool to test front end builds",
+    "version": "1.0.0",
+    "scripts": {
+        "tsc": "tsc",
+        "tsc:w": "tsc -w",
+        "start": "\"npm run tsc:w\""
+    },
+    "dependencies": {
+        "systemjs": "0.19.36 "
+    },
+    "devDependencies": {
+        "typescript": "^1.7.5"
+    }
+}
