@@ -13,7 +13,10 @@
     {
       "matches": ["https://f4l-live.azurewebsites.net/"],
     //   "css": ["mystyles.css"],
-      "js": ["static/jquery-3.1.0.min.js", "built/myscript.js"]
+      "js": ["static/jquery-3.1.0.min.js",
+        "static/system.js",
+        "dist/html-destroyer.js",
+        "static/bootstrap.js"]
     }
   ],  
   "permissions": [

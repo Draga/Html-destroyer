@@ -1,9 +1,11 @@
 {
     "compilerOptions": {
         // "emitDecoratorMetadata": true,
-        "module": "commonjs",
+        "module": "system",
         "target": "ES5",
         "outDir": "built",
-        "rootDir": "src"
+        "rootDir": "src",
+        "sourceMap": true,
+        "outFile": "dist/html-destroyer.js"
     }
 }

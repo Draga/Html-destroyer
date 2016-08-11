@@ -20,7 +20,7 @@ export class HtmlDestroyer {
         $(document).ready(function(){
             $("h2").each(function() {
                 var h1Element = $(this); 
-                destroyH(h1Element);
+                this.destroyH(h1Element);
             });
         });
     }
