@@ -1,4 +1,3 @@
-/// <reference path="jquery.d.ts" />
 import { WordGenerator } from "./word-generator";
 
 export class HtmlDestroyer {
