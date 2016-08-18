@@ -23,7 +23,7 @@ function destroyH() {
           var destroyElement = function() {
               htmlDestroyer.destroyH(element);
               $(window).trigger("resize");
-              setTimeout(destroyElement, Math.random() * 100 + 150);
+              setTimeout(destroyElement, Math.random() * 100 + 50);
           };
           destroyElement();
         });        
