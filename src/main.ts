@@ -57,5 +57,5 @@ function flipAttributesCycle(element:JQuery, attributeFrom:string, attributeTo:s
   $(window).trigger("resize");
   setTimeout(function(){
     flipAttributesCycle(element, attributeTo, attributeFrom);
-  }, Math.random() * 200 + 50);
+  }, Math.random() * 500 + 50);
 }
