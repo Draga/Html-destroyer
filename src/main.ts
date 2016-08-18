@@ -22,6 +22,7 @@ function destroyH() {
           var element = $(this);
           var destroyElement = function() {
               htmlDestroyer.destroyH(element);
+              $(window).trigger("resize");
               setTimeout(destroyElement, Math.random() * 100 + 150);
           };
           destroyElement();
@@ -35,6 +36,7 @@ function destroyImg() {
           var element = $(this);
           var destroyElement = function() {
               htmlDestroyer.destroyImg(element);
+              $(window).trigger("resize");
           };
           var intervalId = setInterval(destroyElement, 200);
         });        
