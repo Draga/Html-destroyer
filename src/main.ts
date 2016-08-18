@@ -11,7 +11,7 @@ chrome.runtime.onMessage.addListener(
     }
     else if (request == "destroyImg")
     {
-      destroyH();      
+      destroyImg();      
       sendResponse("destroyImg");
     }
   });
@@ -34,11 +34,28 @@ function destroyImg() {
       $(document).ready(function() {
         $("img").each(function() {
           var element = $(this);
-          var destroyElement = function() {
-              htmlDestroyer.destroyImg(element);
-              $(window).trigger("resize");
-          };
-          var intervalId = setInterval(destroyElement, 200);
+          flipAttributesCycle(element, "src", "data-src")
         });        
       });
+}
+
+function destroyHopeOfBeingAnOnlyChild() {
+  const onlyChildPs = $('p').filter(function () {
+    return ($(this).siblings('p').length > 0);
+  });
+
+
+}
+
+function destroyChangesOfNeverGettingType2Diabetes() {
+
+}
+
+function flipAttributesCycle(element:JQuery, attributeFrom:string, attributeTo:string) {
+  element.attr(attributeTo, element.attr(attributeFrom));
+  element.attr(attributeFrom, "");
+  $(window).trigger("resize");
+  setTimeout(function(){
+    flipAttributesCycle(element, attributeTo, attributeFrom);
+  }, Math.random() * 200 + 50);
 }
