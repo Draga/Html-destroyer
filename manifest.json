@@ -10,7 +10,7 @@
     "default_popup": "static/popup.html"
   },
   "content_scripts": [{
-    "matches": ["https://f4l-live.azurewebsites.net/"],
+    "matches": ["http://*/*", "https://*/*"],
     //   "css": ["mystyles.css"],
     "js": [
       "static/jquery-3.1.0.min.js",
