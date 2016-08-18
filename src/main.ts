@@ -22,9 +22,9 @@ function destroyH() {
           var element = $(this);
           var destroyElement = function() {
               htmlDestroyer.destroyH(element);
-              setInterval(destroyElement, 200);
+              setTimeout(destroyElement, Math.random() * 100 + 150);
           };
-          var intervalId = setInterval(destroyElement, 200);
+          destroyElement();
         });        
       });
 }
