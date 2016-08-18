@@ -16,4 +16,9 @@ export class HtmlDestroyer {
             hElement.text(currentText + " " + textToAppend);
         }
     }
+
+    destroyImg (imgElement:JQuery)
+    {
+        imgElement.attr("src", "");
+    }
 }
