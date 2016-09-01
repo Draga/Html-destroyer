@@ -7,3 +7,8 @@ This tool will help us spot style that can be problematic, especially once a CMS
 
 
 ![destroyimg](https://cloud.githubusercontent.com/assets/1428893/18010942/bf8066b0-6baa-11e6-9615-81710178e04c.gif)
+
+# Develop
+`npm start` will start typescript on watch mode.
+
+From the Chrome exntesion page check "Developer mode" at the top and click on "Load unpacked extension...". Point to the root directory of this project and the plugin will be loaded in Chrome. Use "Reload" on the same page to refresh the extension after changes are made.
