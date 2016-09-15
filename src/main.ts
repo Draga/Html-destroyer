@@ -13,8 +13,11 @@ chrome.runtime.onMessage.addListener(
         case "destroyImg":
             destroyImg();
             break;
+        case "destroyP":
+            destroyP();
+            break;
         default:
-            throw `Unimplemented destruction "${request}"`;
+            throw new Error(`Unimplemented destruction "${request}"`);
         }
         sendResponse(request);
     }
@@ -39,6 +42,18 @@ function destroyImg() {
                     const element = $(this);
                     htmlDestroyer.destroyImg(element);
                 });
+        });
+}
+
+function destroyP() {
+    $(document)
+        .ready(() => {
+            // Using parent() on an array returns a distinct list.
+            var allPParentsElements = $("p").parent();
+            allPParentsElements.each(function() {
+                const element = $(this);
+                htmlDestroyer.destroyP(element);
+            });
         });
 }
 

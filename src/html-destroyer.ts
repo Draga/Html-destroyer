@@ -42,4 +42,24 @@ export class HtmlDestroyer {
         },
             Math.random() * 500 + 50);
     }
-}
+     
+    destroyP(pParent: JQuery) {
+        const maxPs = 2;
+        let childrenP = pParent.children("p");
+        if (childrenP.length >= maxPs) {
+            for (var i = 1; i < childrenP.length; i++) {
+                childrenP[i].remove();
+            }
+        } else {
+            let firstP = childrenP.first();
+            firstP.clone().insertAfter(firstP);
+        }
+
+        $(window).trigger("resize");
+
+        setTimeout(() => {
+            this.destroyP(pParent);
+        },
+            Math.random() * 2000 + 1000);
+    }
+} 

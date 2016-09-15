@@ -19,8 +19,17 @@ $(document).ready(function() {
                     $("#destroyImg").text("Destroying Img");
                 });
         });
+    });
 
-
+    $("#destroyP").click(function() {
+        runOnActiveTab(function(tab) {
+            chrome.tabs.sendMessage(
+                tab.id,
+                "destroyP",
+                function(response) {
+                    $("#destroyP").text("Destroying P");
+                });
+        });
     });
 });
 
