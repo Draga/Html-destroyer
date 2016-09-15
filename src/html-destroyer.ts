@@ -7,6 +7,7 @@ export class HtmlDestroyer {
     {
         var currentText = hElement.text();
         var textToAppend = this.wordGenerator.getRandomWord();
+
         if (currentText.length + textToAppend.length + 1 >= 256)
         {
             hElement.text(textToAppend);
@@ -15,6 +16,15 @@ export class HtmlDestroyer {
         {
             hElement.text(currentText + " " + textToAppend);
         }
+
+        $(window).trigger("resize");
+
+
+        setTimeout(() => {
+            this.destroyH(hElement);
+        },
+            Math.random() * 100 + 50);
+    
     }
 
     destroyImg (imgElement:JQuery)
@@ -26,6 +36,7 @@ export class HtmlDestroyer {
         element.attr(attributeTo, element.attr(attributeFrom));
         element.attr(attributeFrom, "");
         $(window).trigger("resize");
+
         setTimeout(() => {
             this.flipAttributesCycle(element, attributeTo, attributeFrom);
         },
