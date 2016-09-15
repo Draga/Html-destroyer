@@ -42,16 +42,6 @@ function destroyImg() {
                     const element = $(this);
                     flipAttributesCycle(element, "src", "data-src");
                 });
-
-            /*// All elements, find the ones with background-image set.
-            // TODO: don't target img elements?
-            $("*")
-                .each(() => {
-                    const element = $(this);
-                    if (element.css("background-image")) {
-                        cssToAttributeCycle(element, "background-image", "css-background-image");
-                    }
-                });*/
         });
 }
 
@@ -77,25 +67,3 @@ function flipAttributesCycle(element: JQuery, attributeFrom: string, attributeTo
         },
         Math.random() * 500 + 50);
 }
-
-/*var cssToAttributeCycle = (element: JQuery, cssProperty: string, attributeName: string) => {
-    const cssPropertyValue = element.css(cssProperty);
-    element.attr(attributeName, cssPropertyValue);
-    element.css(cssProperty, "");
-
-    setTimeout(() => {
-            attributeToCssCycle(element, attributeName, cssProperty);
-        },
-        Math.random() * 500 + 50);
-};
-
-var attributeToCssCycle = (element: JQuery, cssProperty: string, attributeName: string) => {
-    const attributeValue = element.attr(attributeName);
-    element.css(cssProperty, attributeValue);
-    element.attr(attributeName, "");
-
-    setTimeout(() => {
-            cssToAttributeCycle(element, attributeName, cssProperty);
-        },
-        Math.random() * 500 + 50);
-};*/
