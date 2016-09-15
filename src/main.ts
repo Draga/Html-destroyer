@@ -36,11 +36,10 @@ function destroyH() {
 function destroyImg() {
     $(document)
         .ready(() => {
-            // Img elements.
             $("img")
                 .each(function() {
                     const element = $(this);
-                    flipAttributesCycle(element, "src", "data-src");
+                    htmlDestroyer.destroyImg(element);
                 });
         });
 }
@@ -52,18 +51,4 @@ function destroyHopeOfBeingAnOnlyChild() {
         });
 
 
-}
-
-function destroyChangesOfNeverGettingType2Diabetes() {
-
-}
-
-function flipAttributesCycle(element: JQuery, attributeFrom: string, attributeTo: string) {
-    element.attr(attributeTo, element.attr(attributeFrom));
-    element.attr(attributeFrom, "");
-    $(window).trigger("resize");
-    setTimeout(() => {
-            flipAttributesCycle(element, attributeTo, attributeFrom);
-        },
-        Math.random() * 500 + 50);
 }
