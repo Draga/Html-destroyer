@@ -52,7 +52,7 @@ function destroyP() {
             var allPParentsElements = $("p").parent();
             allPParentsElements.each(function() {
                 const element = $(this);
-                htmlDestroyer.destroyP(element);
+                htmlDestroyer.destroyPParent(element);
             });
         });
 }
