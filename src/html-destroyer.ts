@@ -46,14 +46,16 @@ export class HtmlDestroyer {
     destroyPParent(pParent: JQuery) {
         let childrenP = pParent.children("p");
 
+        // Until list is exhausted group P elements together where they are
+        // adjacent and share the class.
         while (childrenP.length) {
             let firstChildP = childrenP.first();
-            let adjecentChildrenP = firstChildP.add(firstChildP.next("p"));
-            this.destroyP(adjecentChildrenP);
-            childrenP = childrenP.not(adjecentChildrenP);
-        }
+            let pSimilarToFirt = firstChildP.nextAll("p [class='" + firstChildP.attr("class") + "']");
+            let similarP = firstChildP.add(pSimilarToFirt);
 
-        this.destroyP(childrenP);
+            this.destroyP(similarP);
+            childrenP = childrenP.not(similarP);
+        }
     }
 
     private destroyP(pElements: JQuery) {
