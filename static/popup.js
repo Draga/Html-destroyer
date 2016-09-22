@@ -5,7 +5,9 @@ $(document).ready(function() {
                 tab.id,
                 "destroyH",
                 function(response) {
-                    $("#destroyH").text("Destroying H");
+                    $("#destroyH")
+                        .addClass("disabled")
+                        .text("Destroying H");
                 });
         });
     });
@@ -16,7 +18,9 @@ $(document).ready(function() {
                 tab.id,
                 "destroyImg",
                 function(response) {
-                    $("#destroyImg").text("Destroying Img");
+                    $("#destroyImg")
+                        .addClass("disabled")
+                        .text("Destroying Img");
                 });
         });
     });
@@ -27,7 +31,9 @@ $(document).ready(function() {
                 tab.id,
                 "destroyP",
                 function(response) {
-                    $("#destroyP").text("Destroying P");
+                    $("#destroyP")
+                        .addClass("disabled")
+                        .text("Destroying P");
                 });
         });
     });

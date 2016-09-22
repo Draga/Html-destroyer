@@ -1,43 +1,45 @@
 <!doctype html>
 <!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
+This page is shown when the extension button is clicked, because the
+"browser_action" field in manifest.json contains the "default_popup" key with
+value "popup.html".
+-->
 <html>
 
 <head>
-  <title>Html Destroyer</title>
-  <style>
-    body {
-      font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-      font-size: 100%;
-    }
-    
-    #status {
-      /* avoid an excessively wide status text */
-      white-space: pre;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      max-width: 400px;
-    }
-  </style>
+    <title>Html Destroyer</title>
+    <style>
+        body {
+            font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+            font-size: 100%;
+        }
 
-  <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     -->
-  <script src="jquery-3.1.0.min.js"></script>
-  <script src="popup.js"></script>
+        #status {
+            max-width: 400px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* avoid an excessively wide status text */
+            white-space: pre;
+        }
+    </style>
+
+    <!--
+    - JavaScript and HTML must be in separate files: see our Content Security
+    - Policy documentation[1] for details and explanation.
+    -
+    - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 
 <body>
-  <h1>DESTROY</h1>
-  <button id="destroyH">Destroy h elements</button>
-  <button id="destroyImg">Destroy img elements</button>
-  <button id="destroyP">Destroy p elements</button>
-</body>
+
+    <h1>DESTROY</h1>
+    <button class="btn btn-default btn-block" id="destroyH">Destroy h elements</button>
+    <button class="btn btn-default btn-block" id="destroyImg">Destroy img elements</button>
+    <button class="btn btn-default btn-block" id="destroyP">Destroy p elements</button>
+    </body>
 
 </html>
