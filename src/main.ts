@@ -1,7 +1,7 @@
 // This is just trampoline code to deal with Chrome plugin comunications.
 // Receive orders from the plugin popup and call the relevant HtmlDestroyer method.
 
-import { HtmlDestroyer } from "./html-destroyer";
+import { HtmlDestroyer } from "./HtmlDestroyer";
 var htmlDestroyer = new HtmlDestroyer();
 
 chrome.runtime.onMessage.addListener(
@@ -32,7 +32,7 @@ function destroyH() {
             $("h1, h2, h3, h4, h5, h6")
                 .each(function() {
                     let element = $(this);
-                    htmlDestroyer.destroyH(element);
+                    htmlDestroyer.hDestroyer.destroyH(element);
                 });
         });
 }
@@ -43,7 +43,7 @@ function destroyImg() {
             $("img")
                 .each(function() {
                     let element = $(this);
-                    htmlDestroyer.destroyImg(element);
+                    htmlDestroyer.imgDestroyer.destroyImg(element);
                 });
         });
 }
@@ -55,7 +55,7 @@ function destroyP() {
             var allPParentsElements = $("p").parent();
             allPParentsElements.each(function() {
                 let element = $(this);
-                htmlDestroyer.destroyPParent(element);
+                htmlDestroyer.pDestroyer.destroyPParent(element);
             });
         });
 }

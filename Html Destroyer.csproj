@@ -23,10 +23,13 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\chrome.d.ts" />
-    <TypeScriptCompile Include="src\html-destroyer.ts" />
+    <TypeScriptCompile Include="src\destroyers\HDestroyer.ts" />
+    <TypeScriptCompile Include="src\destroyers\ImgDestroyer.ts" />
+    <TypeScriptCompile Include="src\destroyers\PDestroyer.ts" />
+    <TypeScriptCompile Include="src\HtmlDestroyer.ts" />
     <TypeScriptCompile Include="src\jquery.d.ts" />
     <TypeScriptCompile Include="src\main.ts" />
-    <TypeScriptCompile Include="src\word-generator.ts" />
+    <TypeScriptCompile Include="src\WordGenerator.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
