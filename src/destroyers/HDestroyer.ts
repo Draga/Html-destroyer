@@ -1,11 +1,11 @@
-﻿import Generator = require("../WordGenerator");
+﻿import Generator = require("../LasagnaWordProvider");
 
 export class HDestroyer {
-    private wordGenerator = new Generator.WordGenerator();
+    constructor(private wordGenerator : IWordProvider){}
 
     public destroyH(hElement: JQuery) {
         const currentText = hElement.text();
-        const textToAppend = this.wordGenerator.getRandomWord();
+        const textToAppend = this.wordGenerator.getWord();
 
         if (currentText.length + textToAppend.length + 1 >= 256) {
             hElement.text(textToAppend);

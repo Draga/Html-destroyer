@@ -1,0 +1,3 @@
+﻿interface IWordProvider {
+    getWord() : string;
+}

@@ -29,7 +29,8 @@
     <TypeScriptCompile Include="src\HtmlDestroyer.ts" />
     <TypeScriptCompile Include="src\jquery.d.ts" />
     <TypeScriptCompile Include="src\main.ts" />
-    <TypeScriptCompile Include="src\WordGenerator.ts" />
+    <TypeScriptCompile Include="src\LasagneWordProvider.ts" />
+    <TypeScriptCompile Include="src\IWordProvider.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
