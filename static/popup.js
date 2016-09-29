@@ -37,6 +37,19 @@ $(document).ready(function() {
                 });
         });
     });
+
+    $("#destroyLiText").click(function() {
+        runOnActiveTab(function(tab) {
+            chrome.tabs.sendMessage(
+                tab.id,
+                "destroyLiText",
+                function(response) {
+                    $("#destroyLiText")
+                        .addClass("disabled")
+                        .text("Destroying Li Text");
+                });
+        });
+    });
 });
 
 function runOnActiveTab(functionOnTab) {

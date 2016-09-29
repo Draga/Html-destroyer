@@ -16,6 +16,9 @@ chrome.runtime.onMessage.addListener(
         case "destroyP":
             destroyP();
             break;
+        case "destroyLiText":
+            destroyLiText();
+            break;
         default:
             throw new Error(`Unimplemented destruction "${request}"`);
         }
@@ -56,6 +59,17 @@ function destroyP() {
             allPParentsElements.each(function() {
                 let element = $(this);
                 htmlDestroyer.pDestroyer.destroyPParent(element);
+            });
+        });
+}
+
+function destroyLiText() {
+    $(document)
+        .ready(() => {
+            var liElements = $("li");
+            liElements.each(function() {
+                let element = $(this);
+                htmlDestroyer.liTextDestroyer.destroyLiText(element);
             });
         });
 }

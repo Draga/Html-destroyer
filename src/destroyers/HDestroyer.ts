@@ -1,6 +1,4 @@
-﻿import Generator = require("../LasagnaWordProvider");
-
-export class HDestroyer {
+﻿export class HDestroyer {
     constructor(private wordGenerator : IWordProvider){}
 
     public destroyH(hElement: JQuery) {
