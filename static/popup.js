@@ -50,6 +50,19 @@ $(document).ready(function() {
                 });
         });
     });
+
+    $("#destroyLiWidth").click(function () {
+        runOnActiveTab(function(tab) {
+            chrome.tabs.sendMessage(
+                tab.id,
+                "destroyLiWidth",
+                function(response) {
+                    $("#destroyLiWidth")
+                        .addClass("disabled")
+                        .text("Destroying Li Width");
+                });
+        });
+    });
 });
 
 function runOnActiveTab(functionOnTab) {

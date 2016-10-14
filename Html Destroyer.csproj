@@ -22,6 +22,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\destroyers\LiWidthDestroyer.ts" />
     <TypeScriptCompile Include="src\lib\chrome.d.ts" />
     <TypeScriptCompile Include="src\destroyers\TextDestroyer.ts" />
     <TypeScriptCompile Include="src\destroyers\ImgDestroyer.ts" />

@@ -30,7 +30,6 @@
                 // handleText(node);
                 func(node);
                 break;
-
         }
     }
 

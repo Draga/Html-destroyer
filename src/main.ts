@@ -19,6 +19,9 @@ chrome.runtime.onMessage.addListener(
         case "destroyLiText":
             destroyLiText();
             break;
+        case "destroyLiWidth":
+            destroyLiWidth();
+            break;
         default:
             throw new Error(`Unimplemented destruction "${request}"`);
         }
@@ -70,6 +73,21 @@ function destroyLiText() {
             liElements.each(function() {
                 let element = $(this);
                 htmlDestroyer.textDestroyer.destroyText(element);
+            });
+        });
+}
+
+// Duplicate all li that do not have li as descendant.
+function destroyLiWidth() {
+    $(document)
+        .ready(() => {
+            var liElements = $("li");
+
+            var leafLiElements = liElements.not(liElements.parents("li"));
+
+            leafLiElements.each(function() {
+                let element = $(this);
+                htmlDestroyer.liWidthDestroyer.destroyLiWidth(element);
             });
         });
 }
