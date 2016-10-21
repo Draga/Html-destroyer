@@ -38,7 +38,7 @@ function destroyH() {
             $("h1, h2, h3, h4, h5, h6")
                 .each(function() {
                     let element = $(this);
-                    htmlDestroyer.textDestroyer.destroyText(element, 256);
+                    htmlDestroyer.textDestroyer.destroyText(element, 256, 50, 100);
                 });
         });
 }
@@ -72,7 +72,7 @@ function destroyLiText() {
             var liElements = $("li");
             liElements.each(function() {
                 let element = $(this);
-                htmlDestroyer.textDestroyer.destroyText(element, 64);
+                htmlDestroyer.textDestroyer.destroyText(element, 64, 250, 100);
             });
         });
 }
