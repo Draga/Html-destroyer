@@ -4,7 +4,7 @@
     destroyText(element: JQuery, maxWords: number, baseCycleMs: number, upToRandomCycleMs: number) {
         element.each((i, el) => {
             this.walk((node: Node) => {
-                    this.destroyTextAndRecurse(node, maxWords, baseCycleMs, upToRandomCycleMs);
+                    this.addTextAndRecurse(node, maxWords, baseCycleMs, upToRandomCycleMs);
                 },
                 el
             );
@@ -33,7 +33,7 @@
         }
     }
 
-    private destroyTextAndRecurse(node: Node, maxWords: number, baseCycleMs: number, upToRandomCycleMs: number) {
+    private addTextAndRecurse(node: Node, maxWords: number, baseCycleMs: number, upToRandomCycleMs: number) {
         const currentText = node.nodeValue;
         const textToAppend = this.wordGenerator.getWord();
 
@@ -46,7 +46,7 @@
         $(window).trigger("resize");
 
         setTimeout(() => {
-                this.destroyTextAndRecurse(node, maxWords, baseCycleMs, upToRandomCycleMs);
+                this.addTextAndRecurse(node, maxWords, baseCycleMs, upToRandomCycleMs);
             },
             Math.random() * upToRandomCycleMs + baseCycleMs);
     }

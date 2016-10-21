@@ -1,4 +1,6 @@
-﻿export class PDestroyer {
+﻿import {Helpers} from "../Helpers";
+
+export class PDestroyer {
     public destroyPParent(pParent: JQuery) {
         let childrenP = pParent.children("p");
 
@@ -18,11 +20,7 @@
         const maxPs = 3;
 
         if (pElements.length >= maxPs) {
-            while (pElements.length > 1) {
-                let pToRemove = pElements.get(1);
-                pToRemove.remove();
-                pElements = pElements.not(pToRemove);
-            }
+            pElements = Helpers.removeNonFirstElements(pElements);
         } else {
             let firstP = pElements.first();
             let copy = firstP.clone();

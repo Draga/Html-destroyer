@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\destroyers\ListWidthDestroyer.ts" />
+    <TypeScriptCompile Include="src\Helpers.ts" />
     <TypeScriptCompile Include="src\lib\chrome.d.ts" />
     <TypeScriptCompile Include="src\destroyers\TextDestroyer.ts" />
     <TypeScriptCompile Include="src\destroyers\ImgDestroyer.ts" />
