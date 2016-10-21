@@ -1,7 +1,7 @@
 import { PDestroyer } from "./destroyers/PDestroyer";
 import { TextDestroyer } from "./destroyers/TextDestroyer";
 import { ImgDestroyer } from "./destroyers/ImgDestroyer";
-import { LiWidthDestroyer } from "./destroyers/LiWidthDestroyer";
+import { ListWidthDestroyer } from "./destroyers/ListWidthDestroyer";
 import { LasagneWordProvider} from "./LasagneWordProvider";
 
 export class HtmlDestroyer {
@@ -10,5 +10,5 @@ export class HtmlDestroyer {
     textDestroyer = new TextDestroyer(this.wordProvider);
     imgDestroyer = new ImgDestroyer();
     pDestroyer = new PDestroyer();
-    liWidthDestroyer = new LiWidthDestroyer();
+    listWidthDestroyer = new ListWidthDestroyer();
 }

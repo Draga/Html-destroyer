@@ -51,13 +51,13 @@ $(document).ready(function() {
         });
     });
 
-    $("#destroyLiWidth").click(function () {
+    $("#destroyListWidth").click(function () {
         runOnActiveTab(function(tab) {
             chrome.tabs.sendMessage(
                 tab.id,
-                "destroyLiWidth",
+                "destroyListWidth",
                 function(response) {
-                    $("#destroyLiWidth")
+                    $("#destroyListWidth")
                         .addClass("disabled")
                         .text("Destroying Li Width");
                 });
