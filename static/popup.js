@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $("#destroyH").click(function() {
         runOnActiveTab(function(tab) {
             chrome.tabs.sendMessage(
@@ -7,6 +8,7 @@ $(document).ready(function() {
                 function(response) {
                     $("#destroyH")
                         .addClass("disabled");
+                    $("#refresh").removeClass("disabled");
                 });
         });
     });
@@ -19,6 +21,7 @@ $(document).ready(function() {
                 function(response) {
                     $("#destroyImg")
                         .addClass("disabled");
+                    $("#refresh").removeClass("disabled");
                 });
         });
     });
@@ -31,6 +34,7 @@ $(document).ready(function() {
                 function(response) {
                     $("#destroyP")
                         .addClass("disabled");
+                    $("#refresh").removeClass("disabled");
                 });
         });
     });
@@ -43,6 +47,7 @@ $(document).ready(function() {
                 function(response) {
                     $("#destroyLiText")
                         .addClass("disabled");
+                    $("#refresh").removeClass("disabled");
                 });
         });
     });
@@ -55,17 +60,19 @@ $(document).ready(function() {
                 function(response) {
                     $("#destroyListWidth")
                         .addClass("disabled");
+                    $("#refresh").removeClass("disabled");
                 });
         });
     });
 
     $("#refresh").click(function () {
-        chrome.tabs.getSelected(null, function(tab) {
-            var reload = 'window.location.reload();';
-            var removeClass = $("button").removeClass("disabled");
-            chrome.tabs.executeScript(tab.id, {code: reload});
-            chrome.tabs.executeScript(tab.id, {code: removeClass});
-        });
+        if ( !$(this).hasClass('disabled') ) {
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                chrome.tabs.reload(tabs[0].id);
+                $("button").removeClass("disabled");
+                $("#refresh").addClass("disabled");
+            });
+        }
     });
 
 });

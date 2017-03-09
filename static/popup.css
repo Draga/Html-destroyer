@@ -117,4 +117,14 @@ button.btn-block + button.btn-block {
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: cover;
+    transition: all .25s ease-in-out;
+}
+
+.container button.btn-refresh:hover {
+    background-image: url(img/refresh-active.svg);
+}
+
+.container button.btn-refresh.disabled,
+.container button.btn-refresh.disabled:hover {
+    background-image: url(img/refresh-disabled.svg);
 }
