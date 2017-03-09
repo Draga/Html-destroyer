@@ -1,0 +1,120 @@
+/*
+* Base
+*/
+
+
+
+/*
+* Container
+*/
+.container {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #0c0c0c;
+    min-width: 300px;
+    position: relative;
+}
+
+
+/*
+* H1 - Title
+*/
+h1 {
+    margin: 0;
+    background-color: #0c0c0c;
+    height: 60px;
+    text-indent: -2000em;
+    overflow: hidden;
+    background-image: url(img/title.svg);
+    background-repeat: no-repeat;
+    background-position: 25px 25px;
+    background-size: 170px 50%;
+}
+
+
+/*
+* Buttons
+*/
+.container button.btn-block {
+    border: 0;
+    border-radius: 0;
+    margin-top: 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 25px;
+    text-align: left;
+    outline: none !important;
+    font-size: 13px;
+    line-height: 13px;
+    background-image: url(img/skull-default.svg);
+    background-repeat: no-repeat;
+    background-position: top 50% right 25px;
+    background-size: 20px 22px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    transition: all .25s ease-in;
+}
+
+.container button.btn-block:nth-child(odd),
+.container button.btn-default:nth-child(odd):focus,
+.container button.btn-default:nth-child(odd):focus:hover,
+.container button.btn-default:nth-child(odd):active:focus,
+.container button.btn-default:nth-child(odd):active:hover,
+.container button.btn-default:nth-child(odd).disabled:hover {
+    background-color: #111111;
+}
+
+.container button:nth-child(even),
+.container button.btn-default:nth-child(even):focus,
+.container button.btn-default:nth-child(even):focus:hover,
+.container button.btn-default:nth-child(even):active:focus,
+.container button.btn-default:nth-child(even):active:hover,
+.container button.btn-default:nth-child(even).disabled:hover {
+    background-color: #0c0c0c;
+}
+
+.container button.btn-block:hover,
+.container button.btn-block:focus,
+.container button.btn-block:active,
+.container button.disabled {
+    opacity: 1;
+    color: #dd4a3e;
+    background-image: url(img/skull-active.svg);
+    background-size: 30px 32px;
+    background-position: top 50% right 20px;    
+}
+
+.container button.btn-default:active:focus,
+.container button.btn-default:active:hover {
+    color: #dd4a3e;
+    border: none;
+    outline: none;
+}
+
+.container button.btn-default.disabled:hover {
+    border: none;
+}
+
+button.btn-block + button.btn-block {
+    margin-top: 0;
+}
+
+
+/*
+* Button - refresh
+*/
+.container button.btn-refresh {
+    position: absolute;
+    top: 25px; right: 25px;
+    width: 20px; height: 22px;
+    text-indent: -2000em;
+    overflow: hidden;
+    border: 0;
+    border-radius: 0;
+    margin-top: 0;
+    outline: none !important;
+    background-image: url(img/refresh.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+}

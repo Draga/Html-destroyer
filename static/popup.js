@@ -6,8 +6,7 @@ $(document).ready(function() {
                 "destroyH",
                 function(response) {
                     $("#destroyH")
-                        .addClass("disabled")
-                        .text("Destroying H");
+                        .addClass("disabled");
                 });
         });
     });
@@ -19,8 +18,7 @@ $(document).ready(function() {
                 "destroyImg",
                 function(response) {
                     $("#destroyImg")
-                        .addClass("disabled")
-                        .text("Destroying Img");
+                        .addClass("disabled");
                 });
         });
     });
@@ -32,8 +30,7 @@ $(document).ready(function() {
                 "destroyP",
                 function(response) {
                     $("#destroyP")
-                        .addClass("disabled")
-                        .text("Destroying P");
+                        .addClass("disabled");
                 });
         });
     });
@@ -45,8 +42,7 @@ $(document).ready(function() {
                 "destroyLiText",
                 function(response) {
                     $("#destroyLiText")
-                        .addClass("disabled")
-                        .text("Destroying Li Text");
+                        .addClass("disabled");
                 });
         });
     });
@@ -58,11 +54,20 @@ $(document).ready(function() {
                 "destroyListWidth",
                 function(response) {
                     $("#destroyListWidth")
-                        .addClass("disabled")
-                        .text("Destroying Li Width");
+                        .addClass("disabled");
                 });
         });
     });
+
+    $("#refresh").click(function () {
+        chrome.tabs.getSelected(null, function(tab) {
+            var reload = 'window.location.reload();';
+            var removeClass = $("button").removeClass("disabled");
+            chrome.tabs.executeScript(tab.id, {code: reload});
+            chrome.tabs.executeScript(tab.id, {code: removeClass});
+        });
+    });
+
 });
 
 function runOnActiveTab(functionOnTab) {
