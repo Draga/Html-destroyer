@@ -80,8 +80,6 @@ h1 {
     opacity: 1;
     color: #dd4a3e;
     background-image: url(img/skull-active.svg);
-    background-size: 30px 32px;
-    background-position: top 50% right 20px;    
 }
 
 .container button.btn-default:active:focus,
